@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WepApi.Controllers
@@ -15,11 +16,10 @@ namespace WepApi.Controllers
 
 
         [HttpPost("add")]
-        public IActionResult Add(string name, string email, string password)
+        public IActionResult Add(UserRegisterDto dto)
         {
-            userService.Add(name, email, password);
-            //var result = userService.CreateAccessToken(user);
-            return Ok("Kullanıcı oluşturuldu.");
+            var result = userService.Add(dto.Name, dto.Email, dto.Password);
+            return result.Success ? Ok(result) : BadRequest(result.Message);
         }
 
 

@@ -3,6 +3,7 @@ using Core.Entities;
 using Core.Hashing;
 using Core.JWT;
 using Core.Utilities;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 
 namespace Business.Concrete
@@ -17,8 +18,11 @@ namespace Business.Concrete
             this.tokenHelper = tokenHelper;
         }
 
-        public void Add(string name, string email, string password)
+        public IResult Add(string name, string email, string password)
         {
+            var userToCheck = userDal.GetByEmail(email);
+            if (userToCheck is not null) return new ErrorResult("Email adresi daha önce kayıt edilmiş.");
+
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
@@ -31,6 +35,7 @@ namespace Business.Concrete
             };
 
             userDal.Add(user);
+            return new SuccessResult("Kullanıcı oluşturuldu.");
         }
 
         public AccessToken CreateAccessToken(User user)
