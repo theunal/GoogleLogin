@@ -11,35 +11,30 @@
                     <form [formGroup]="loginForm" (submit)="login()">
                         <div class="form-group mb-3">
                             <label for="exampleInputEmail1">E-mail</label>
-                            <input type="text" class="form-control" placeholder="Enter E-mail"
-                            formControlName="email">
+                            <input type="text" class="form-control" placeholder="Enter E-mail" formControlName="email">
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="exampleInputEmail1">Password</label>
                             <input type="text" class="form-control" placeholder="Enter Password"
-                            formControlName="password">
+                                formControlName="password">
                         </div>
 
-                        <div class="col-md-12 text-center mt-3">
+                        <!-- <div class="col-md-12 text-center mt-3">
                             <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">SUBMIT</button>
-                        </div>
+                                           </div> -->
 
-                        <!-- google login  -->
-                        <div class="col-md-12 ">
-                            <div class="login-or">
-                                <hr class="hr-or">
-                                <span class="span-or">or</span>
+
+                        <div class="row mt-3 mb-3 ">
+                            <div class="col-2 text-center mx-auto">
+                                <button type="submit" class="btn btn-sm mybtn btn-primary tx-tfm mt-1">SUBMIT</button>
+                            </div>
+                            <div class="col-2 text-center px-1 mx-3 mt-1 mx-auto">
+                                <asl-google-signin-button type = 'button' (submit) = 'googleLogin()'></asl-google-signin-button>
                             </div>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <p class="text-center">
-                                <a class="google btn mybtn">
-                                    <i class="fa fa-google-plus">
-                                    </i> Signup using Google
-                                </a>
-                            </p>
-                        </div>
+
+             
 
                         <!-- button  -->
                         <div class="form-group">
@@ -47,6 +42,7 @@
                                 <a href="/register" id="signup">Sign up here</a>
                             </p>
                         </div>
+
                     </form>
 
                 </div>

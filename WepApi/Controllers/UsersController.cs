@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Core.Dtos;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace WepApi.Controllers
 {
@@ -43,6 +44,14 @@ namespace WepApi.Controllers
             var result = userService.CreateAccessToken(userToLogin.User);
             return Ok(result);
 
+        }
+
+        [HttpPost("googleLogin")]
+        public IActionResult GoogleLogin(GoogleLoginDto dto)
+        {
+
+            var result = userService.GoogleLogin(dto);
+            return Ok(result);
         }
 
     }

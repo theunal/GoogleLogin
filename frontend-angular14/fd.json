@@ -1,0 +1,20 @@
+{
+    "alg": "RS256",
+    "kid": "2650a2ce47b1ab3ba4099797f8c06ebc3de928ac",
+    "typ": "JWT"
+}.{
+    "iss": "https://accounts.google.com",
+    "nbf": 1656776534,
+    "aud": "194099528747-hadb8mf9uhmk5q28fmb22oihrnjhaifk.apps.googleusercontent.com",
+    "sub": "111509871206090903362",
+    "email": "kyaka144@gmail.com",
+    "email_verified": true,
+    "azp": "194099528747-hadb8mf9uhmk5q28fmb22oihrnjhaifk.apps.googleusercontent.com",
+    "name": "Yusuf Ünal",
+    "picture": "https://lh3.googleusercontent.com/a/AATXAJztJL7A_Y0DiXueClUqH66Aj-SfzsRjriAJYOCX=s96-c",
+    "given_name": "Yusuf",
+    "family_name": "Ünal",
+    "iat": 1656776834,
+    "exp": 1656780434,
+    "jti": "2019ed4b748d4767459b9d3f738502bcc3645bd7"
+}
